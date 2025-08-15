@@ -4,25 +4,28 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: Arial, sans-serif;
-    color: white; /* Esta linha muda a cor do texto para branco */
+    color: white; /* Esta linha muda a cor do texto padrão para branco */
 }
 
 h1 {
-    font-size: 3em; /* Deixa o título principal maior */
-    text-shadow: 2px 2px 4px #000000; /* Adiciona uma sombra para destacar */
+    font-size: 4em; /* Deixa o título principal (Chef Do Dia) bem maior */
+    color: #fff;
+    text-shadow: 2px 2px 5px #000000; /* Sombra mais forte para destacar */
 }
 
 h2 {
-    font-size: 2em; /* Deixa o subtítulo maior */
-    color: #f8f8f8; /* Mudei a cor do subtítulo para um branco mais sutil */
+    font-size: 2.5em; /* Deixa o subtítulo (Selecione seus ingredientes) maior */
+    color: #fff;
+    text-shadow: 1px 1px 3px #000000; /* Adiciona sombra para destaque */
 }
 
 .ingredientes label {
-    font-size: 1.2em; /* Aumenta o tamanho das letras ao lado dos checkboxes */
+    font-size: 1.5em; /* Aumenta o tamanho das letras dos ingredientes */
     color: #fff; /* Muda a cor das letras para branco */
+    text-shadow: 1px 1px 2px #000000; /* Adiciona sombra para destacar */
 }
 
 #btn-mostrar {
-    font-size: 1.2em; /* Aumenta o tamanho da fonte do botão */
-    padding: 10px 20px; /* Aumenta o tamanho do botão */
+    font-size: 1.5em; /* Aumenta o tamanho da fonte do botão */
+    padding: 15px 30px; /* Aumenta o tamanho do botão */
 }
