@@ -4,25 +4,25 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: Arial, sans-serif;
-    color: white; /* Esta linha muda a cor do texto padrão para branco */
+    color: #333; /* Esta linha muda a cor do texto padrão para um cinza escuro/marrom */
 }
 
 h1 {
     font-size: 4em; /* Deixa o título principal (Chef Do Dia) bem maior */
-    color: #fff;
-    text-shadow: 2px 2px 5px #000000; /* Sombra mais forte para destacar */
+    color: #333;
+    text-shadow: 2px 2px 5px #f0f0f0; /* Sombra clara para destacar o texto escuro */
 }
 
 h2 {
     font-size: 2.5em; /* Deixa o subtítulo (Selecione seus ingredientes) maior */
-    color: #fff;
-    text-shadow: 1px 1px 3px #000000; /* Adiciona sombra para destaque */
+    color: #333;
+    text-shadow: 1px 1px 3px #f0f0f0; /* Adiciona sombra clara para destaque */
 }
 
 .ingredientes label {
     font-size: 1.5em; /* Aumenta o tamanho das letras dos ingredientes */
-    color: #fff; /* Muda a cor das letras para branco */
-    text-shadow: 1px 1px 2px #000000; /* Adiciona sombra para destacar */
+    color: #333; /* Muda a cor das letras para cinza escuro */
+    text-shadow: 1px 1px 2px #f0f0f0; /* Adiciona sombra clara para destacar */
 }
 
 #btn-mostrar {
