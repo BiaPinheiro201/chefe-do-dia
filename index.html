@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Do Dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Chef Do Dia</h1>
+    </header>
+
+    <div class="container-fluid ingredientes">
+        <h2>Selecione seus ingredientes:</h2>
+        <div class="row">
+            <div class="col">
+                <input type="checkbox" id="ovos" name="ingrediente" value="ovos">
+                <label for="ovos">Ovos</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="queijo" name="ingrediente" value="queijo">
+                <label for="queijo">Queijo</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="tomate" name="ingrediente" value="tomate">
+                <label for="tomate">Tomate</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="macarrão" name="ingrediente" value="macarrão">
+                <label for="macarrão">Macarrão</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="leite" name="ingrediente" value="leite">
+                <label for="leite">Leite</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="manteiga" name="ingrediente" value="manteiga">
+                <label for="manteiga">Manteiga</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="alface" name="ingrediente" value="alface">
+                <label for="alface">Alface</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="cebola" name="ingrediente" value="cebola">
+                <label for="cebola">Cebola</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="azeite" name="ingrediente" value="azeite">
+                <label for="azeite">Azeite</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="frango" name="ingrediente" value="frango">
+                <label for="frango">Frango</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="limao" name="ingrediente" value="limão">
+                <label for="limao">Limão</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="sal" name="ingrediente" value="sal">
+                <label for="sal">Sal</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="trigo" name="ingrediente" value="trigo">
+                <label for="trigo">Trigo</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="fermento" name="ingrediente" value="fermento">
+                <label for="fermento">Fermento</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="acucar" name="ingrediente" value="açúcar">
+                <label for="acucar">Açúcar</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="achocolatado" name="ingrediente" value="achocolatado">
+                <label for="achocolatado">Achocolatado</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="leite-condensado" name="ingrediente" value="leite condensado">
+                <label for="leite-condensado">Leite Condensado</label>
+            </div>
+            <div class="col">
+                <input type="checkbox" id="creme-de-leite" name="ingrediente" value="creme de leite">
+                <label for="creme-de-leite">Creme de Leite</label>
+            </div>
+        </div>
+        <button id="btn-mostrar">Mostrar Receitas</button>
+    </div>
+
+    <main class="container-fluid recipes-results">
+        <div id="receitas-container" class="row">
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lista de receitas com seus ingredientes e imagens
+            const receitas = [
+                {
+                    nome: "Omelete Simples",
+                    ingredientes: ["ovos", "queijo", "tomate"],
+                    imagem: "https://biapinheiro201.github.io/Chef-Do-Dia/assets/receita1.jpg"
+                },
+                {
+                    nome: "Salada Colorida",
+                    ingredientes: ["alface", "tomate", "cebola", "azeite"],
+                    imagem: "https://biapinheiro201.github.io/Chef-Do-Dia/assets/receita2.jpg"
+                },
+                {
+                    nome: "Macarrão com Queijo",
+                    ingredientes: ["macarrão", "queijo", "leite", "manteiga"],
+                    imagem: "https://biapinheiro201.github.io/Chef-Do-Dia/assets/receita3.jpg"
+                },
+                {
+                    nome: "Frango Grelhado",
+                    ingredientes: ["frango", "limão", "sal"],
+                    imagem: "https://biapinheiro201.github.io/Chef-Do-Dia/assets/receita4.jpg"
+                },
+                {
+                    nome: "Bolo de Chocolate",
+                    ingredientes: ["trigo", "açúcar", "ovos", "leite", "achocolatado", "fermento"],
+                    imagem: "https://biapinheiro201.github.io/Chef-Do-Dia/assets/receita5.jpg"
+                },
+                {
+                    nome: "Panqueca Doce",
+                    ingredientes: ["trigo", "açúcar", "ovos", "leite"],
+                    imagem: "https://biapinheiro201.github.io/Chef-Do-Dia/assets/receita6.jpg"
+                },
+                {
+                    nome: "Pudim de Leite Condensado",
+                    ingredientes: ["leite condensado", "leite", "ovos", "açúcar"],
+                    imagem: "https://biapinheiro201.github.io/Chef-Do-Dia/assets/receita7.jpg"
+                },
+                {
+                    nome: "Bolo de Caneca",
+                    ingredientes: ["trigo", "açúcar", "achocolatado", "fermento", "leite", "ovos"],
+                    imagem: "https://biapinheiro201.github.io/Chef-Do-Dia/assets/receita8.jpg"
+                }
+            ];
+
+            const mostrarReceitasBtn = document.getElementById('btn-mostrar');
+            const receitasContainer = document.getElementById('receitas-container');
+
+            mostrarReceitasBtn.addEventListener('click', function() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                const ingredientesSelecionados = Array.from(checkboxes).map(checkbox => checkbox.value);
+                
+                // Filtra as receitas para encontrar aquelas que incluem TODOS os ingredientes selecionados
+                const receitasEncontradas = receitas.filter(receita => {
+                    return ingredientesSelecionados.every(ingrediente => receita.ingredientes.includes(ingrediente));
+                });
+                
+                // Limpa o conteúdo anterior
+                receitasContainer.innerHTML = '';
+                
+                // Se encontrar receitas, exibe-as; caso contrário, mostra uma mensagem
+                if (receitasEncontradas.length > 0) {
+                    receitasEncontradas.forEach(receita => {
+                        const receitaHTML = `
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="${receita.imagem}" class="card-img-top" alt="${receita.nome}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${receita.nome}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        receitasContainer.innerHTML += receitaHTML;
+                    });
+                } else {
+                    receitasContainer.innerHTML = '<p>Nenhuma receita encontrada com os ingredientes selecionados.</p>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
